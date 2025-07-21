@@ -1,0 +1,32 @@
+{
+  "name": "epic-battle-arena",
+  "version": "1.0.0",
+  "description": "Epic multiplayer online battle arena game with real-time combat and strategy elements",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "cd server && npm run dev",
+    "client:dev": "cd client && npm run dev",
+    "build": "npm run client:build && npm run server:build",
+    "client:build": "cd client && npm run build",
+    "server:build": "cd server && npm run build",
+    "start": "cd server && npm start",
+    "test": "concurrently \"cd server && npm test\" \"cd client && npm test\"",
+    "setup": "npm install && cd server && npm install && cd ../client && npm install",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down"
+  },
+  "keywords": ["game", "multiplayer", "battle-arena", "real-time", "websocket", "mmorpg"],
+  "author": "Epic Games Studio",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3",
+    "@types/node": "^20.10.5"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
